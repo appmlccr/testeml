@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PerguntaAe!</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/uikit.min.css">
+</head>
+<body>
+  <app-root></app-root>
+
+  <script src="assets/js/uikit.min.js"></script>
+  <script src="assets/js/uikit-icons.min.js"></script>
+  <script src="https://a248.e.akamai.net/secure.mlstatic.com/org-img/sdk/mercadolibre-1.0.4.js"></script>
+
+  <script>
+  
+  MELI.init({client_id: 5910896196624267,
+              xauth_protocol: "https://",
+              xauth_domain: "secure.mlstatic.com",
+              xd_url: "/org-img/sdk/xd-1.0.4.html"
+  });
+
+  MELI.login(function() {
+    // MELI.get("/users/me", {}, function(data){
+    //   console.log(JSON.stringify(data[2]));
+    // })
+    MELI.getLoginStatus(function (data) {
+    let token;
+
+    if(data.state === 'AUTHORIZED'){
+      token = data.authorization_info.access_token;
+    }
+    console.log('CHUPA ANDRE, TA AI O TOKEN', token)
+  })
+  })
+
+  // MELI.getLoginStatus(function (data) {
+  //   let token;
+
+  //   if(data.state === 'AUTHORIZED'){
+  //     token = data.authorization_info.access_token;
+  //   }
+  //   console.log('CHUPA ANDRE, TA AI O TOKEN', token)
+  // })
+  </script>
+</body>
+</html>
+
+
+
+
+
