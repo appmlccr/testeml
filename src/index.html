@@ -20,25 +20,23 @@
 
   <script>
   
-  MELI.init({client_id: 5910896196624267,
-              xauth_protocol: "https://",
-              xauth_domain: "secure.mlstatic.com",
-              xd_url: "/org-img/sdk/xd-1.0.4.html"
-  });
+  // MELI.init({client_id: 5910896196624267,
+  //             xauth_protocol: "https://",
+  //             xauth_domain: "secure.mlstatic.com",
+  //             xd_url: "/org-img/sdk/xd-1.0.4.html"
+  // });
 
-  MELI.login(function() {
-    // MELI.get("/users/me", {}, function(data){
-    //   console.log(JSON.stringify(data[2]));
-    // })
-    MELI.getLoginStatus(function (data) {
-    let token;
+  // MELI.login(function() {
+    
+  //   MELI.getLoginStatus(function (data) {
+  //   let token;
 
-    if(data.state === 'AUTHORIZED'){
-      token = data.authorization_info.access_token;
-    }
-    console.log('CHUPA ANDRE, TA AI O TOKEN', token)
-  })
-  })
+  //   if(data.state === 'AUTHORIZED'){
+  //     token = data.authorization_info.access_token;
+  //   }
+  //   console.log('CHUPA ANDRE, TA AI O TOKEN', token)
+  // })
+  // })
 
   // MELI.getLoginStatus(function (data) {
   //   let token;

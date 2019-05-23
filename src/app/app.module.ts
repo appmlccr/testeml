@@ -32,6 +32,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTE)
   ],
   providers: [],
