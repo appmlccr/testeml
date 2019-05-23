@@ -1,8 +1,13 @@
-import { firebaseConfig } from './shared/config';
-import { ROUTE } from './routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -12,9 +17,9 @@ import { ResetpasswordPageComponent } from './pages/resetpassword-page/resetpass
 import { RouterModule } from '@angular/router';
 import { MasterPageComponent } from './shared/masterPage/masterpage';
 import { AccountPageComponent } from './pages/account-page/account-page.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { firebaseConfig } from './shared/config';
+import { ROUTE } from './routes';
+
 
 @NgModule({
   declarations: [
@@ -32,9 +37,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
-    RouterModule.forRoot(ROUTE)
+    RouterModule.forRoot(ROUTE, {useHash: true}),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

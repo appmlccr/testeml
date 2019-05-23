@@ -1,0 +1,15 @@
+/* .tm-navbar-container:not(.uk-navbar-transparent) {
+    background: linear-gradient(to left, #28a5f5, #1e87f0);
+} */
+
+a {
+    color: white !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.tm-button-default, .tm-button-primary {
+    border-radius: 500px;
+}
+
+.uk-nav>li>a {
+    padding: 13px 0;
+}
